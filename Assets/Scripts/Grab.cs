@@ -34,9 +34,9 @@ public class Grab : MonoBehaviour
                 Debug.Log("Player grabbed: " + targetObject.name);
                 grabbedObject = targetObject;
                 grabbedObject.transform.SetParent(player.transform);
-                if (grabbedObject.GetComponent<Rigidbody>() != null)
+                if (grabbedObject.GetComponent<Rigidbody2D>() != null)
                 {
-                    Rigidbody rb = grabbedObject.GetComponent<Rigidbody>();
+                    Rigidbody2D rb = grabbedObject.GetComponent<Rigidbody2D>();
                     if (rb != null)
                     {
                         rb.isKinematic = true;
@@ -54,9 +54,9 @@ public class Grab : MonoBehaviour
             Debug.Log("Player released: " + grabbedObject.name);
 
             grabbedObject.transform.SetParent(null);
-            if (grabbedObject.GetComponent<Rigidbody>() != null)
+            if (grabbedObject.GetComponent<Rigidbody2D>() != null)
             {
-                Rigidbody rb = grabbedObject.GetComponent<Rigidbody>();
+                Rigidbody2D rb = grabbedObject.GetComponent<Rigidbody2D>();
                 if (rb != null)
                 {
                     rb.isKinematic = false;
