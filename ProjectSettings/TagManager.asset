@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Death
+  - Grabable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
