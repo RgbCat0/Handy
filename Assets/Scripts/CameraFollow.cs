@@ -1,15 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
-
-    [SerializeField]
-    private Quaternion desiredRotation;
     public float smoothSpeed = 14f;
+    public float teleportDistance;
     private float _smoothSpeed;
 
     private void FixedUpdate()
@@ -17,7 +12,7 @@ public class CameraFollow : MonoBehaviour
         if (!target)
             return;
 
-        if (Vector2.Distance(transform.position, target.position) > 15)
+        if (Vector2.Distance(transform.position, target.position) > teleportDistance)
             ForceTeleportToTarget();
 
         _smoothSpeed = smoothSpeed + Vector2.Distance(transform.position, target.position);

@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
+    public bool breaker;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Application.Quit();
+            while (true)
+            {
+                if (breaker)
+                    break;
+            }
             Debug.Log("You died.");
         }
     }
